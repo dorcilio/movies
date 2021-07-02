@@ -1,10 +1,15 @@
 package com.awards.raspberry.golden.movies.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,20 +22,22 @@ public class Movie {
 	private Integer year;
 	private String title;
 	private String studio;
-	private String producer;
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name="id_movie")
+	private List<Producer> producers;
 	private Boolean winner;
 	
 	public Movie () {
 		
 	}
 
-	public Movie(Long idMovie, Integer year, String title, String studio, String producer, Boolean winner) {
+	public Movie(Long idMovie, Integer year, String title, String studio, List<Producer> producers, Boolean winner) {
 		super();
 		this.idMovie = idMovie;
 		this.year = year;
 		this.title = title;
 		this.studio = studio;
-		this.producer = producer;
+		this.producers = producers;
 		this.winner = winner;
 	}
 
@@ -66,12 +73,12 @@ public class Movie {
 		this.studio = studio;
 	}
 
-	public String getProducer() {
-		return producer;
+	public List<Producer> getProducers() {
+		return producers;
 	}
 
-	public void setProducer(String producer) {
-		this.producer = producer;
+	public void setProducers(List<Producer> producers) {
+		this.producers = producers;
 	}
 
 	public Boolean getWinner() {
