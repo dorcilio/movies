@@ -46,5 +46,5 @@ obteve dois prêmios mais rápido, seguindo a especificação de formato definid
     Connection: keep-alive
     Content-Type: application/json;charset=UTF-8
     
-    {"min":[{"producer":"Bo Derek","previousWin":1984,"followingWin":1990,"interval":6}],"max":[{"producer":"Bo Derek","previousWin":1984,"followingWin":1990,"interval":6}]}
+    {"min":[{"producer":"Joel Silver","previousWin":1990,"followingWin":1991,"interval":1}],"max":[{"producer":"Matthew Vaughn","previousWin":2002,"followingWin":2015,"interval":13}]}
 
